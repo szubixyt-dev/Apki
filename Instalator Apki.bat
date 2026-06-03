@@ -52,6 +52,7 @@ echo Kliknij dowolny przycisk aby wyjść
 pause >nul
 exit
 
+:advanced
 echo Instalacja zaawansowana
 echo.
 
