@@ -55,7 +55,7 @@ exit
 echo Instalacja zaawansowana
 echo.
 
-choice /M "Włączyć automatyczną instalację dodatkowych pakietów"
+choice /M "Wlaczyc automatyczna instalacje dodatkowych pakietow"
 
 if errorlevel 2 goto express
 if errorlevel 1 goto advanced_install
