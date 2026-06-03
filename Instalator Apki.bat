@@ -8,37 +8,37 @@ set "APPDIR=%APPDATA%\Bridge Studios\Apki"
 cls
 echo Witamy w instalatorze Apki
 echo.
-echo Zacznijmy instalowac Apki
+echo Zacznijmy instalować Apki
 echo.
 echo [1] Instalacja Ekspresowa
 echo [2] Instalacja Zaawansowana
 echo.
 
-set /p wybor=Wybierz opcje: 
+set /p wybor=Wybierz opcję: 
 
 if "%wybor%"=="1" goto express
 if "%wybor%"=="2" goto advanced
 
-echo Nieprawidlowy wybor.
+echo Nieprawidłowy wybór.
 pause
 goto inst
 
 :express
-echo Tworzenie folderow...
+echo Tworzenie folderów...
 
 mkdir "%APPDATA%\Bridge Studios" 2>nul
 mkdir "%APPDIR%" 2>nul
 
-echo Pobieranie plikow...
+echo Pobieranie plików...
 
-:: Tutaj wstaw bezposredni link do pliku ZIP
+:: pobieranie
 powershell -Command "Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/szubixyt-dev/Apki/main/Apki.zip' -OutFile '%TEMP%\apki.zip'"
 
 echo Wypakowywanie...
 
 powershell -Command "Expand-Archive -Path '%TEMP%\apki.zip' -DestinationPath '%APPDIR%' -Force"
 
-echo Instalacja zakonczona.
+echo Instalacja zakończona.
 powershell -Command ^
 "$s=(New-Object -COM WScript.Shell).CreateShortcut('%USERPROFILE%\Desktop\Apki.lnk'); ^
 $s.TargetPath='%APPDATA%\Bridge Studios\Apki\s.bat'; ^
@@ -52,34 +52,33 @@ echo Kliknij dowolny przycisk aby wyjść
 pause >nul
 exit
 
-:advanced
 echo Instalacja zaawansowana
 echo.
 
-choice /M "Wlaczyc automatyczna instalacje dodatkowych pakietow"
+choice /M "Włączyć automatyczną instalację dodatkowych pakietów"
 
 if errorlevel 2 goto express
 if errorlevel 1 goto advanced_install
 
 :advanced_install
 cls
-echo Tworzenie folderow...
+echo Tworzenie folderów...
 
 mkdir "%APPDATA%\Bridge Studios" 2>nul
 mkdir "%APPDIR%" 2>nul
 
-echo Pobieranie plikow...
+echo Pobieranie plików...
 
-:: Tutaj wstaw bezposredni link do pliku ZIP
+:: pobieranie
 powershell -Command "Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/szubixyt-dev/Apki/main/Apki.zip' -OutFile '%TEMP%\apki.zip'"
 
 echo Wypakowywanie...
 
 powershell -Command "Expand-Archive -Path '%TEMP%\apki.zip' -DestinationPath '%APPDIR%' -Force"
 
-echo Instalacja dodatkowych pakietow...
-:: powershell -Command "Invoke-WebRequest -Uri 'https://download1650.mediafire.com/eyktzxjku6zg_wel0T1ykPQiCRYXl8bY-cKi6_5TqaXrXB_GM1dzyWv2AnPkIEANF4-m_WRHrcIs7rtPDnZJM4NFFAM9-e1_0Bf5lgxenMo16-tFnDLiJB2NICUjVgaTtgPpfmA88_UYnrrMQ9wrMcVUhtJmTuH3sFFg_DtB6OkHSJqk/ydc8zi3kb3qnt2s/apki.zip' -OutFile '%TEMP%'"
-echo Instalacja zakonczona.
+echo Instalacja dodatkowych pakietów...
+:: tu narazie nic | Wkrótce
+echo Instalacja zakończona.
 powershell -Command ^
 "$s=(New-Object -COM WScript.Shell).CreateShortcut('%USERPROFILE%\Desktop\Apki.lnk'); ^
 $s.TargetPath='%APPDATA%\Bridge Studios\Apki\s.bat'; ^
