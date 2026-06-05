@@ -38,7 +38,7 @@ mkdir "%APPDIR%" 2>nul
 echo Pobieranie plików...
 
 :: pobieranie
-powershell -Command "Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/szubixyt-dev/Apki/main/Apki.zip' -OutFile '%TEMP%\apkiwin10.zip'"
+powershell -Command "Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/szubixyt-dev/Apki/main/Apki.zip' -OutFile '%TEMP%\apki.zip'"
 
 echo Wypakowywanie...
 
