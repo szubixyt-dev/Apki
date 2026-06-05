@@ -3,7 +3,13 @@ chcp 65001 >nul
 title Instalator Apki
 
 set "APPDIR=%APPDATA%\Bridge Studios\Apki"
-for /f "tokens=3" %i in ('reg query "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion" /v CurrentBuild ^| find "CurrentBuild"') do @if %i GEQ 22000 (goto inst) else (goto inst10)
+for /f "tokens=3" %%i in ('reg query "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion" /v CurrentBuild ^| find "CurrentBuild"') do set BUILD=%%i
+
+if %BUILD% GEQ 22000 (
+    goto inst
+) else (
+    goto inst10
+)
 :inst
 cls
 echo Witamy w instalatorze Apki
