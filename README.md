@@ -1,4 +1,4 @@
-Apki - Instalowanie i Odinstalowanie, dobre na nowiutkie komputery
+# Apki - Instalowanie i Odinstalowanie, dobre na nowiutkie komputery
 
 WAŻNE! Antywirusy np. AVG i Avast mogą wykryć w updaterze IDP.HELU.PSD11 a w funkcji odinstalowania programow IDP.Generic, te wykrycia są błędne!
 
