@@ -84,6 +84,7 @@ echo Wypakowywanie...
 powershell -Command "Expand-Archive -Path '%TEMP%\apki.zip' -DestinationPath '%APPDIR%' -Force"
 
 echo Instalacja dodatkowych pakietów...
+mkdir "%AppData%\Bridge Studios\Apki\packages"
 (
     echo Google.Chrome
     echo Discord.Discord
