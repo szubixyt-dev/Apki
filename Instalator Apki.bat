@@ -84,7 +84,26 @@ echo Wypakowywanie...
 powershell -Command "Expand-Archive -Path '%TEMP%\apki.zip' -DestinationPath '%APPDIR%' -Force"
 
 echo Instalacja dodatkowych pakietów...
-:: tu narazie nic | Wkrótce
+(
+    echo Google.Chrome
+    echo Discord.Discord
+    echo dotPDN.PaintDotNet
+    echo VideoLan.VLC
+    echo RARLab.WinRAR
+) > "%AppData%\Bridge Studios\Apki\packages\Pakiet Apki.txt"
+(
+    echo Valve.Steam
+    echo EpicGames.EpicGamesLauncher
+    echo Discord.Discord
+    echo OBSProject.OBSStudio
+    echo Mojang.MinecraftLauncher
+) > "%AppData%\Bridge Studios\Apki\packages\Gamer.txt"
+(
+    echo Microsoft.VisualStudioCode
+    echo GitHub.GitHubDesktop
+    echo Python.Python.3.13
+    echo OpenJS.NodeJS.LTS
+) > "%AppData%\Bridge Studios\Apki\packages\Programista.txt"
 echo Instalacja zakończona.
 powershell -Command ^
 "$s=(New-Object -COM WScript.Shell).CreateShortcut('%USERPROFILE%\Desktop\Apki.lnk'); ^
