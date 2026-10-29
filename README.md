@@ -1,6 +1,6 @@
 # Apki - Instalowanie i Odinstalowanie, Nowy Update: Łatwiej niż nigdy, pomagaj innym!
 
-w Apki 4.0:
+w Apki 4.1:
 1. Pakiety, możliwość ich instalowania i łatwego tworzenia
 2. Z pakietami można instalować kilka programów na raz, nie musisz sie trudzić
 3. Naprawy bugów
